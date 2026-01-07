@@ -5,6 +5,9 @@ import NoteCard from "../components/NoteCard";
 import HabitCard from "../components/HabitCard";
 import RecentActivity from "../components/RecentActivity";
 import RecentTransactions from "../components/RecentTransactions";
+import MostImportantTask from "../components/MostImportantTask";
+import TasksSnapshot from "../components/TasksSnapshot";
+import DueTodayTasks from "../components/DueTodayTasks";
 import { useNavigate } from "react-router-dom";
 import { Sun, Cloud, Moon, MapPin, Clock } from "lucide-react";
 
@@ -167,11 +170,15 @@ export default function Dashboard() {
         <NoteCard data={summary?.notes} />
         <HabitCard data={summary?.habits} />
       </div>
-<div className="mt-10 max-w-7xl mx-auto flex flex-col md:flex-row gap-4">
+<div className="mt-8 max-w-7xl mx-auto flex flex-col md:flex-row gap-6">
   <RecentActivity />
   <RecentTransactions />
 </div>
-
+<div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 max-w-7xl mx-auto">
+  <MostImportantTask />
+  <TasksSnapshot />
+  <DueTodayTasks />
+</div>
     </div>
   );
 }
